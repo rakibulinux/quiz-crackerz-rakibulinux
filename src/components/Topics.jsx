@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { TopicsContext } from "./Root";
+import Topic from "./Topic";
 
 const Topics = () => {
+  const topicsData = useContext(TopicsContext);
+  const topics = topicsData.data;
+  console.log(topics);
   return (
     <section>
       <div className="bg-gray-300">
@@ -13,23 +18,10 @@ const Topics = () => {
             Best quiz platform we will ask you quiz questions for Programming
             Language.
           </p>
-          <div className="flex flex-wrap justify-center">
-            <Link to="/shop">
-              <button
-                type="button"
-                className="px-8 py-3 m-2 text-lg font-semibold rounded-full  text-gray-900 hover:bg-cyan-400 bg-cyan-200"
-              >
-                Shop Now
-              </button>
-            </Link>
-            <Link to="/about">
-              <button
-                type="button"
-                className="px-8 py-3 m-2 text-lg border rounded-full border-cyan-400 text-gray-900"
-              >
-                Learn more
-              </button>
-            </Link>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 justify-center">
+            {topics.map((topic) => (
+              <Topic key={topic.id} topic={topic} />
+            ))}
           </div>
         </div>
       </div>

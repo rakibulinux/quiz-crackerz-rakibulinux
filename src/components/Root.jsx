@@ -3,7 +3,7 @@ import { Outlet, useLoaderData } from "react-router-dom";
 import Footer from "./Footer";
 import Header from "./Header";
 
-const TopicContext = createContext([]);
+export const TopicsContext = createContext([]);
 const QuizContext = createContext([]);
 const Root = () => {
   const topics = useLoaderData();
@@ -11,11 +11,11 @@ const Root = () => {
   console.log(topics);
   console.log(quiz);
   return (
-    <TopicContext.Provider value={topics}>
+    <TopicsContext.Provider value={topics}>
       <Header />
       <Outlet />
       <Footer />
-    </TopicContext.Provider>
+    </TopicsContext.Provider>
   );
 };
 
