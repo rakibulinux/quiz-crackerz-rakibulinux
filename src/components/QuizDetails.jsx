@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 
-const QuizDetails = ({ quiz }) => {
+const QuizDetails = ({ quiz, index }) => {
+  // console.log(index);
   const { correctAnswer, id, options, question } = quiz;
   const [answer, setAnswer] = useState([]);
-  let number = 1;
+  const [indexs, setIndexs] = useState([]);
+  const [isActive, setIsActive] = useState(false);
+  // let number = 1;
   const checkQuiz = (option) => {
     if (option === correctAnswer) {
       //disable the radio button
@@ -17,13 +20,13 @@ const QuizDetails = ({ quiz }) => {
   const displayCorrectAnswer = (correctAnswer) => {
     const quizAnswer = correctAnswer;
     setAnswer(quizAnswer);
+    setIsActive((current) => !current);
   };
-  console.log(answer);
   return (
     <div className="border shadow-2xl border-cyan-300">
       <div className="flex items-center justify-between">
         <h1 className="text-center text-xl font-semibold text-cyan-500 p-4">
-          Quiz {number + 1}: {question}
+          Quiz {indexs}: {question}
         </h1>
         <div>
           <button
@@ -52,9 +55,16 @@ const QuizDetails = ({ quiz }) => {
           </button>
         </div>
       </div>
-      <p className="p-2 text-center text-2xl text-cyan-600">
+      <p
+        style={{
+          padding: isActive ? "20px" : "",
+          color: isActive ? "rgb(8 145 178)" : "",
+          display: isActive ? "block" : "none",
+          fontSize: isActive ? "20px" : "",
+        }}
+      >
         Right Answer for this question:
-        <span className="font-bold text-cyan-900">{answer}</span>
+        <span className="font-bold text-cyan-900"> {answer}</span>
       </p>
       <div className="flex justify-center flex-col p-3  gap-2">
         {options.map((option, idx) => (
@@ -65,15 +75,17 @@ const QuizDetails = ({ quiz }) => {
             <input
               onClick={() => checkQuiz(option)}
               type="radio"
-              name=""
+              name="options"
               id="options"
               value={option}
               className="ml-5 dark:bg-gray-800"
             />
-            <label htmlFor="options"></label>
-            <p className="m-2" option={option}>
+            <label name="options" htmlFor="options" className="m-2">
               {option}
-            </p>
+            </label>
+            {/* <p option={option}>
+              
+            </p> */}
           </div>
         ))}
       </div>
