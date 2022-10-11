@@ -5,7 +5,6 @@ import Quiz from "../components/Quiz";
 import Root from "../components/Root";
 import Statistics from "../components/Statistics";
 import Topics from "../components/Topics";
-import APILoader from "./APILoader";
 
 const router = createBrowserRouter([
   {
@@ -23,7 +22,7 @@ const router = createBrowserRouter([
         element: <Topics />,
       },
       {
-        path: "/book/:id",
+        path: "/quiz/:id",
         loader: ({ params }) =>
           fetch(`https://openapi.programming-hero.com/api/quiz/${params.id}`),
         element: <Quiz />,

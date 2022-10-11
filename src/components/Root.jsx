@@ -4,7 +4,6 @@ import Footer from "./Footer";
 import Header from "./Header";
 
 export const TopicsContext = createContext([]);
-const QuizContext = createContext([]);
 const Root = () => {
   const topics = useLoaderData();
   const quiz = useLoaderData();

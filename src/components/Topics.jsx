@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
 import { TopicsContext } from "./Root";
 import Topic from "./Topic";
 
@@ -25,11 +24,6 @@ const Topics = () => {
           </div>
         </div>
       </div>
-      {/* <img
-        src={heroImg}
-        alt=""
-        className="w-5/6 mx-auto mb-12 -mt-20 rounded-lg shadow-md lg:-mt-40 bg-gray-500"
-      /> */}
     </section>
   );
 };
