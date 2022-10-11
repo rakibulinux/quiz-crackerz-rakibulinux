@@ -5,7 +5,7 @@ const QuizDetails = ({ quiz, index }) => {
   // console.log(index);
   const { correctAnswer, id, options, question } = quiz;
   const [answer, setAnswer] = useState([]);
-  const [indexs, setIndexs] = useState([]);
+  const [indexs, setIndexs] = useState(1);
   const [isActive, setIsActive] = useState(false);
   // let number = 1;
   const checkQuiz = (option) => {
@@ -22,6 +22,7 @@ const QuizDetails = ({ quiz, index }) => {
     setAnswer(quizAnswer);
     setIsActive((current) => !current);
   };
+
   return (
     <div className="border shadow-2xl border-cyan-300">
       <div className="flex items-center justify-between">
