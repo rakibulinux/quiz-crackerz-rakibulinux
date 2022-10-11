@@ -1,10 +1,6 @@
-# quiz-crackerz-Assignment
+# Quiz-crackerz-Assignment
 
-Please create yoru private repo
-
-## [https://classroom.github.com/a/Ob89RIqo](https://classroom.github.com/a/Ob89RIqo)
-
-### Private Repo Link: [https://classroom.github.com/a/Ob89RIqo](https://classroom.github.com/a/Ob89RIqo)
+### Live Link: [https://rakibquiz.netlify.app/](https://rakibquiz.netlify.app/)
 
 ## QUIZ API LINK:
 
