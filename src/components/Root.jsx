@@ -6,7 +6,6 @@ import Header from "./Header";
 export const TopicsContext = createContext([]);
 const Root = () => {
   const topics = useLoaderData();
-  console.log(topics);
   return (
     <TopicsContext.Provider value={topics}>
       <Header />
