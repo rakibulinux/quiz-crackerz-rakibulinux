@@ -1,14 +1,10 @@
 import React, { useContext } from "react";
 import {
-  BarChart,
-  Bar,
-  Cell,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
   Legend,
-  ResponsiveContainer,
   Line,
   LineChart,
 } from "recharts";
@@ -20,7 +16,7 @@ const Statistics = () => {
   const data = topicsData.data;
   console.log(data);
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center bg-gray-300 py-5">
       <LineChart
         width={380}
         height={500}

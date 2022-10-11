@@ -14,12 +14,26 @@ const Topic = ({ topic }) => {
         Topic: {name}
       </p>
       <p className="text-gray-700 font-bold">Total: {total}</p>
-      <button
-        type="button"
-        className="px-8 block w-full mt-4 py-3 font-semibold rounded-full bg-cyan-200 text-gray-800 hover:bg-cyan-400"
+      <Link
+        className="flex gap-2 justify-center items-centerpx-8 w-full mt-4 py-3 font-semibold rounded-full bg-cyan-200 text-gray-800 hover:bg-cyan-400"
+        to={`../quiz/${id}`}
       >
-        <Link to={`../quiz/${id}`}>Start Quiz</Link>
-      </button>
+        <button type="button">Start Quiz </button>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="w-6 h-6"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+          />
+        </svg>
+      </Link>
     </div>
   );
 };

@@ -12,8 +12,8 @@ const Quiz = () => {
   });
   // console.log(index);
   return (
-    <div>
-      <h1 className="text-3xl text-cyan-400 px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 flex items-center justify-center">
+    <div className="bg-gray-300">
+      <h1 className="text-3xl text-cyan-400 px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 flex items-center justify-center pt-5">
         Quiz of {quizData.data.name}
       </h1>
       <div className="px-4 pb-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-80 lg:pb-20 lg:pt-10 flex items-center justify-center">

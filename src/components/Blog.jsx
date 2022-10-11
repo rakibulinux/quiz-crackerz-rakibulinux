@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 const Blog = () => {
   return (
-    <div>
-      <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+    <div className="bg-gray-300">
+      <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-5">
         <p className="mb-2 text-xs font-semibold tracking-wide text-gray-600 uppercase sm:text-center">
-          11 Oct 2022
+          Publish Date: 11 Oct 2022
         </p>
         <div className="max-w-xl mb-5 md:mx-auto sm:text-center lg:max-w-2xl">
           <div className="mb-4">
@@ -40,9 +40,9 @@ const Blog = () => {
           </Link>
         </div>
       </div>
-      <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+      <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-5">
         <p className="mb-2 text-xs font-semibold tracking-wide text-gray-600 uppercase sm:text-center">
-          11 Oct 2022
+          Publish Date: 11 Oct 2022
         </p>
         <div className="max-w-xl mb-5 md:mx-auto sm:text-center lg:max-w-2xl">
           <div className="mb-4">
@@ -75,9 +75,9 @@ const Blog = () => {
           </Link>
         </div>
       </div>
-      <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+      <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-5">
         <p className="mb-2 text-xs font-semibold tracking-wide text-gray-600 uppercase sm:text-center">
-          11 Oct 2022
+          Publish Date: 11 Oct 2022
         </p>
         <div className="max-w-xl mb-5 md:mx-auto sm:text-center lg:max-w-2xl">
           <div className="mb-4">
