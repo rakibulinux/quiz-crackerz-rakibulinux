@@ -70,6 +70,7 @@ const QuizDetails = ({ quiz }) => {
               value={option}
               className="ml-5 dark:bg-gray-800"
             />
+            <label htmlFor="options"></label>
             <p className="m-2" option={option}>
               {option}
             </p>
