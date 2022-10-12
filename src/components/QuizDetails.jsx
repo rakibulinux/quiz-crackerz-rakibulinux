@@ -15,6 +15,11 @@ const QuizDetails = ({ quiz, idx }) => {
       toast.error("Wrong Answer", { autoClose: 500 });
       setWrong(wrong + 1);
     }
+    const radio = document.getElementsByName(id);
+    const len = radio.length;
+    for (let i = 0; i < len; i++) {
+      radio[i].disabled = true;
+    }
   };
   console.log("Correct answer:", correct, "Wrong Answer", wrong);
 
@@ -23,16 +28,6 @@ const QuizDetails = ({ quiz, idx }) => {
     setAnswer(quizAnswer);
     setIsActive((current) => !current);
   };
-
-  const radio = document.getElementsByName(id);
-  const len = radio.length;
-  for (let i = 0; i < len; i++) {
-    radio[i].disabled = true;
-    // if (i < 0) {
-    // } else {
-    //   radio[i].disabled = false;
-    // }
-  }
 
   return (
     <div className="bg-white border shadow-2xl border-cyan-300">
