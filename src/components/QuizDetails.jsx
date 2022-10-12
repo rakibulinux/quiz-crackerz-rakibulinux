@@ -1,31 +1,44 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 
-const QuizDetails = ({ quiz, index }) => {
-  // console.log(index);
-  const { correctAnswer, options, question } = quiz;
+const QuizDetails = ({ quiz, idx }) => {
+  const { correctAnswer, id, options, question } = quiz;
   const [answer, setAnswer] = useState([]);
-  // const [indexs, setIndexs] = useState(1);
   const [isActive, setIsActive] = useState(false);
-  // let number = 1;
+  const [correct, setCorrect] = useState(0);
+  const [wrong, setWrong] = useState(0);
   const checkQuiz = (option) => {
     if (option === correctAnswer) {
-      toast.success("Right Answer", { autoClose: 500 });
+      toast.success("Correct Answer", { autoClose: 500 });
+      setCorrect(correct + 1);
     } else {
       toast.error("Wrong Answer", { autoClose: 500 });
+      setWrong(wrong + 1);
     }
   };
+  console.log("Correct answer:", correct, "Wrong Answer", wrong);
+
   const displayCorrectAnswer = (correctAnswer) => {
     const quizAnswer = correctAnswer;
     setAnswer(quizAnswer);
     setIsActive((current) => !current);
   };
 
+  const radio = document.getElementsByName(id);
+  const len = radio.length;
+  for (let i = 0; i < len; i++) {
+    radio[i].disabled = true;
+    // if (i < 0) {
+    // } else {
+    //   radio[i].disabled = false;
+    // }
+  }
+
   return (
     <div className="bg-white border shadow-2xl border-cyan-300">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-center">
         <h1 className="text-center text-xl font-semibold text-cyan-500 p-4">
-          Quiz : {question}
+          Quiz {idx + 1}: {question.slice(3, -4)}
         </h1>
         <div>
           <button
@@ -75,8 +88,8 @@ const QuizDetails = ({ quiz, index }) => {
             <input
               onClick={() => checkQuiz(option)}
               type="radio"
-              name="options"
-              id="options"
+              name={id}
+              id={id}
               value={option}
               className="ml-5 dark:bg-gray-800"
             />
