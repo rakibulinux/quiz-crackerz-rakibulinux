@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 const Topic = ({ topic }) => {
   const { id, name, logo, total } = topic;
+
   return (
     <div className="bg-gray-100 p-6 rounded shadow-lg">
       <img
@@ -13,12 +14,12 @@ const Topic = ({ topic }) => {
       <p className="mb-2 text-xl font-bold leading-none sm:text-2xl">
         Topic: {name}
       </p>
-      <p className="text-gray-700 font-bold">Total: {total}</p>
+      <p className="text-gray-700 font-bold">Total Quiz: {total}</p>
       <Link
         className="flex gap-2 justify-center items-centerpx-8 w-full mt-4 py-3 font-semibold rounded-full bg-cyan-200 text-gray-800 hover:bg-cyan-400"
         to={`../quiz/${id}`}
       >
-        <button type="button">Start Quiz </button>
+        <button type="button">Start Quiz</button>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

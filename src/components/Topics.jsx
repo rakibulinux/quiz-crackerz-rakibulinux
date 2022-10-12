@@ -5,7 +5,7 @@ import Topic from "./Topic";
 const Topics = () => {
   const topicsData = useContext(TopicsContext);
   const topics = topicsData.data;
-  console.log(topics);
+
   return (
     <section>
       <div className="bg-gray-300">

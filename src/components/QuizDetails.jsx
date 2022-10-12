@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 
-const QuizDetails = ({ quiz, idx }) => {
+const QuizDetails = ({ quiz, idx, correct, setCorrect, wrong, setWrong }) => {
   const { correctAnswer, id, options, question } = quiz;
   const [answer, setAnswer] = useState([]);
   const [isActive, setIsActive] = useState(false);
-  const [correct, setCorrect] = useState(0);
-  const [wrong, setWrong] = useState(0);
+
+  // Quiz Check function
   const checkQuiz = (option) => {
     if (option === correctAnswer) {
       toast.success("Correct Answer", { autoClose: 500 });
@@ -15,14 +15,16 @@ const QuizDetails = ({ quiz, idx }) => {
       toast.error("Wrong Answer", { autoClose: 500 });
       setWrong(wrong + 1);
     }
+
+    // To disable radio button after select one option
     const radio = document.getElementsByName(id);
     const len = radio.length;
     for (let i = 0; i < len; i++) {
       radio[i].disabled = true;
     }
   };
-  console.log("Correct answer:", correct, "Wrong Answer", wrong);
 
+  // Display Correct Answer function
   const displayCorrectAnswer = (correctAnswer) => {
     const quizAnswer = correctAnswer;
     setAnswer(quizAnswer);

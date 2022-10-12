@@ -15,7 +15,6 @@ import { TopicsContext } from "./Root";
 const Statistics = () => {
   const topicsData = useContext(TopicsContext);
   const data = topicsData.data;
-  console.log(data);
   return (
     <div className="flex justify-center items-center bg-gray-300 py-5 my-5 m-auto w-9/12 h-80">
       <ResponsiveContainer>
